@@ -1,0 +1,23 @@
+The Chevalier's Lament
+Robert Burns
+The small birds rejoice in the green leaves returning,
+The murmuring streamlet winds clear thro' the vale,
+The primroses blow in the dews of the morning,
+And wild scatter'd cowslips bedeck the green dale:
+But what can give pleasure, or what can seem fair,
+When the lingering moments are number'd by care ?
+No flow'rs gaily springing, nor birds sweetly singing,
+Can soothe the sad bosom of joyless despair!
+The deed that I dar'd, could it merit their malice,
+A king and a father to place on his throne ?
+His right are these hills, and his right are those valleys,
+Where the wild beasts find shelter, tho I can find none!
+But 'tis not my suff'rings this wretched, forlorn-
+My brave gallant friends,'Tis your ruin I mourn!
+Your faith prov'd so loyal in hot bloody trial,
+Alas! can I make it no better return?
+tune: Captain Okean 220
+filename[ CHVLAMNT
+play.exe CHVLAMNT
+ARB
+===DOCUMENT BOUNDARY===
