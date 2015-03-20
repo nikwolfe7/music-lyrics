@@ -1,16 +1,18 @@
 import os
 from collections import Counter
 from debug import debug
+import codecs
 import re
+from requests.status_codes import codes
 
 #=========================================#
 # STUFF YOU CHANGE
 #=========================================#
 #folder = "test_data"
-#folder = "hip_hop_rap"
+folder = "hip_hop_rap"
 #folder = "rock_metal_country"
 #folder = "shakespeare"
-folder = "le_fabliaux"
+#folder = "le_fabliaux"
 subfolder = "data"
 #=========================================#
 # STUFF YOU LEAVE ALONE
@@ -43,7 +45,7 @@ def write_ngram_stats(ngram, filename):
 	f = open(subfolder + os.sep + filename,'a')
 	for n in ngram:
 		csv = ",".join([str(n[0]),str(n[1])])
-		f.write(csv + "\n")
+		f.write(str(csv.encode(encoding='ascii', errors='replace').decode()) + "\n")
 	f.close()
 
 def new_s_stat(): 
@@ -53,7 +55,7 @@ def write_s_stat(s):
 	f = open(subfolder + os.sep + song_stats,'a')
 	for item in s: s[item] = str(s[item])
 	csv = "\t".join([s['ARTIST'],s['SONG'],s['TYPES'],s['TOKENS'],s['AVG_LINE_LENGTH'],s['MOST_COMMON_WORD'],s['MOST_COMMON_BIGRAM'],s['MOST_COMMON_TRIGRAM']])
-	f.write(csv + "\n")
+	f.write(str(csv.encode(encoding='ascii', errors='replace').decode()) + "\n")
 	f.close()
 
 def new_a_stat(): 
@@ -63,7 +65,7 @@ def write_a_stat(a):
 	f = open(subfolder + os.sep + artist_stats,'a')
 	for item in a: a[item] = str(a[item])
 	csv = "\t".join([a['ARTIST'],a['NUM_SONGS'],a['NUM_TYPES'],a['NUM_TOKENS'],a['MEAN_AVG_LINE_LENGTH'],a['MOST_COMMON_WORD'],a['MOST_COMMON_BIGRAM'],a['MOST_COMMON_TRIGRAM']])
-	f.write(csv + "\n")
+	f.write(str(csv.encode(encoding='ascii', errors='replace').decode()) + "\n")
 	f.close()
 
 def new_g_stat(): 
@@ -73,7 +75,7 @@ def write_g_stat(g):
 	f = open(subfolder + os.sep + genre_stats,'a')
 	for item in g: g[item] = str(g[item])
 	csv = "\t".join([g['NUM_ARTISTS'],g['NUM_SONGS'],g['NUM_TYPES'],g['NUM_TOKENS'],g['MEAN_AVG_LINE_LENGTH'],g['MOST_COMMON_WORD'],g['MOST_COMMON_BIGRAM'],g['MOST_COMMON_TRIGRAM']])
-	f.write(csv + "\n")
+	f.write(str(csv.encode(encoding='ascii', errors='replace').decode()) + "\n")
 	f.close()
 
 
@@ -91,8 +93,9 @@ def fill_buckets(directory):
 				song = fname[-1]
 				artist = fname[1]
 				#print("Song: "+song)
-				file_contents = [l.strip() for l in open(filename).readlines() if len(l.strip())]
-				artist_document_map[artist][song] = file_contents	
+				with codecs.open(filename, encoding="ascii", errors="replace") as filename:
+					file_contents = [l.strip() for l in filename.readlines() if len(l.strip())]
+					artist_document_map[artist][song] = file_contents	
 
 
 def get_counted_sorted_list(list2sort):
@@ -128,12 +131,12 @@ def get_song_stats(song):
 		bag_of_words += line
 
 	# handle the stupid case...
-	#if len(song) <= 1:
-	#	song = ["empty"]
-	#	bag_of_words = song
-	#	line_count = 1
-	#	types = 1
-	#	tokens = 1
+	if len(song) <= 1:
+		song = ["empty"]
+		bag_of_words = song
+		line_count = 1
+		types = 1
+		tokens = 1
 
 	frequencies = Counter(bag_of_words)
 	types = len(frequencies.keys())

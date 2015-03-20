@@ -18,7 +18,7 @@ listfile = "hip-hop-rap-artists-current.list"
 #listfile = "eric-b-rakim.list"
 artist_websites = set()
 lyrics_map = {}
-seconds_to_wait = 1
+seconds_to_wait = 3
 retry_time = seconds_to_wait
 
 def delay(s):
