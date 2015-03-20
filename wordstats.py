@@ -3,7 +3,6 @@ from collections import Counter
 from debug import debug
 import codecs
 import re
-from requests.status_codes import codes
 
 #=========================================#
 # STUFF YOU CHANGE
