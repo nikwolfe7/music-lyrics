@@ -9,14 +9,23 @@ Created on Mar 23, 2015
 # ===================================== #
 # STUFF YOU CAN CHANGE
 # ===================================== #
-corpus_name = "sonnets_poetry"
-directory = "shakespeare" + os.sep + corpus_name
-output = "lang_model"
+corpus_name = "brown"
+directory = corpus_name
+output = "brown_corpus"
 remove_stops = True
+filetype = ""
 # ===================================== #
 # STUFF YOU LEAVE ALONE
 # ===================================== #
 
+def clean_brown_line(line):
+    if not "/" in line: return line
+    cleaned = ["\t"]
+    for word in line.split():
+        if not "``" in word and not "''" in word:
+            cleaned.append(word.split("/")[0])
+    return " ".join(cleaned)
+    
 
 def make_dir(name):
     try: os.stat(name)
@@ -31,13 +40,14 @@ def main():
         for dir in dirs:
             print("Artist: "+dir)
         for f in files:
-            if f.endswith(".txt"):
-                print("Song: " + f)
+            if f.endswith(filetype):
+                print("Document: " + f)
                 f = os.path.abspath(root + os.sep + f)
                 data = [l.strip() for l in open(f).readlines() if l.strip() != ""]
                 for line in data:
+                    line = clean_brown_line(line)
                     wordstats.remove_stops = remove_stops
-                    (a, b, c, bow, e) = wordstats.get_song_stats(line.split(), suppress_output=True)
+                    (a, b, c, bow, e) = wordstats.get_song_stats(line.split(), oneline=True, suppress_output=True)
                     if count % 10 == 0:
                         test_data.append(bow)
                     else:

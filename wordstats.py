@@ -8,7 +8,7 @@ import re
 # STUFF YOU CHANGE
 #=========================================#
 #folder = "test_data"
-folder = "hip_hop_rap"
+folder = "brown_corpus"
 #folder = "rock_metal_country"
 #folder = "shakespeare"
 #folder = "le_fabliaux"
