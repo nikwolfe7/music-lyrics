@@ -4,7 +4,7 @@
 # $Header: /home/srilm/CVS/srilm/Makefile,v 1.70 2014-05-26 03:30:23 stolcke Exp $
 #
 
-SRILM = /Users/nwolfe/Documents/workspace/music-lyrics/srilm
+SRILM = /media/nwolfe/data/Dropbox/workspace/music-lyrics/srilm
 MACHINE_TYPE := $(shell $(SRILM)/sbin/machine-type)
 
 RELEASE := $(shell cat RELEASE)

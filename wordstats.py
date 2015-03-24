@@ -101,7 +101,7 @@ def get_counted_sorted_list(list2sort):
 	return sorted(Counter(list2sort).items(), key=lambda item: item[1], reverse=True)
 
 
-def get_song_stats(song):
+def get_song_stats(song, oneline=False, suppress_output=False):
 	#print("SONG: ")
 	#print(song)
 
@@ -130,18 +130,20 @@ def get_song_stats(song):
 		bag_of_words += line
 
 	# handle the stupid case...
-	if len(song) <= 1:
-		song = ["empty"]
-		bag_of_words = song
-		line_count = 1
-		types = 1
-		tokens = 1
+	if oneline:
+		if len(song) <= 1:
+			song = ["empty"]
+			bag_of_words = song
+			line_count = 1
+			types = 1
+			tokens = 1
 
 	frequencies = Counter(bag_of_words)
 	types = len(frequencies.keys())
 	average_line_length = round(float(len(bag_of_words))/float(line_count),2)
-	print("avg line: "+str(average_line_length))
-	print("tokens: " + str(tokens))
+	if not suppress_output:
+		print("avg line: "+str(average_line_length))
+		print("tokens: " + str(tokens))
 	return (types, tokens, average_line_length, bag_of_words, frequencies)
 
 				
