@@ -14,7 +14,10 @@ def main():
         for f in files:
             if f.endswith("unigram_word_ranks.csv"):
                 print("File: "+f)
-                words = set([l.strip() for l in open(f).readlines()])
+                words = [l.strip() for l in open(f).readlines()]
+                #count_total = 0
+                #for w in words: count_total += int(w.split(",")[-1])
+                words = set(words)
                 overlap = GRE.intersection(set([w.split(",")[0] for w in words]))
                 #print(overlap)
                 total_usage = 0
@@ -27,8 +30,8 @@ def main():
                         sorted_words.append((w,count))
                 
                 sorted_words = sorted(sorted_words, key=lambda x: x[1], reverse=True)
-                avg_usage = float(total_usage) / len(overlap)         
-                print(sorted_words)
+                avg_usage = float(total_usage) / len(sorted_words)         
+                #print(sorted_words)
                 print(f + " contains " + str(len(overlap)) + " GRE words... " + str(total_usage) + " mentions, avg: " + str(avg_usage))
                 
                 # pseudocount smooting for GRE words...

@@ -12,8 +12,8 @@ import re
 #folder = "rock_metal_country"
 #folder = "brown_corpus"
 #folder = "shakespeare"
-folder = "shakespeare_sonnets"
-#folder = "le_fabliaux"
+#folder = "shakespeare_sonnets"
+folder = "le_fabliaux"
 subfolder = "data"
 #=========================================#
 # STUFF YOU LEAVE ALONE
@@ -103,7 +103,7 @@ def get_counted_sorted_list(list2sort):
 	return sorted(Counter(list2sort).items(), key=lambda item: item[1], reverse=True)
 
 
-def get_song_stats(song, oneline=True, suppress_output=False):
+def get_song_stats(song, oneline=False, suppress_output=False):
 	#print("SONG: ")
 	#print(song)
 
