@@ -9,11 +9,11 @@ Created on Mar 23, 2015
 # ===================================== #
 # STUFF YOU CAN CHANGE
 # ===================================== #
-corpus_name = "le_fabliaux"
+corpus_name = "shakespeare_sonnets"
 directory = corpus_name
 output = "lang_model"
-remove_stops = True
-filetype = ""
+remove_stops = False
+filetype = ".txt"
 # ===================================== #
 # STUFF YOU LEAVE ALONE
 # ===================================== #

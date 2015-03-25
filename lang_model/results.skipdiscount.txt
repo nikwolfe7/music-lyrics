@@ -1,0 +1,162 @@
+
+
+Computing n-grams models for brown corpus...
+
+Unigram Model:
+file brown.test.txt: 5733 sentences, 102621 words, 2003 OOVs
+0 zeroprobs, logprob= -325037 ppl= 1138.33 ppl1= 1699.83
+
+Unigram Model (Stop words removed):
+file brown.test.nostop.txt: 5728 sentences, 74284 words, 2003 OOVs
+0 zeroprobs, logprob= -267813 ppl= 2710.84 ppl1= 5071.82
+
+Bigram Model:
+file brown.test.txt: 5733 sentences, 102621 words, 2003 OOVs
+0 zeroprobs, logprob= -283102 ppl= 459.159 ppl1= 651.082
+
+Bigram Model (Stop words removed):
+file brown.test.nostop.txt: 5728 sentences, 74284 words, 2003 OOVs
+0 zeroprobs, logprob= -246113 ppl= 1428.67 ppl1= 2540.68
+
+Trigram Model:
+file brown.test.txt: 5733 sentences, 102621 words, 2003 OOVs
+0 zeroprobs, logprob= -279675 ppl= 426.322 ppl1= 601.97
+
+Trigram Model (Stop words removed):
+file brown.test.nostop.txt: 5728 sentences, 74284 words, 2003 OOVs
+0 zeroprobs, logprob= -245309 ppl= 1395.17 ppl1= 2476.44
+
+
+Computing n-grams models for hip_hop_rap corpus...
+
+Unigram Model:
+file hip_hop_rap.test.txt: 106713 sentences, 772655 words, 5381 OOVs
+0 zeroprobs, logprob= -2.43361e+06 ppl= 608.831 ppl1= 1485.14
+
+Unigram Model (Stop words removed):
+file hip_hop_rap.test.nostop.txt: 106635 sentences, 545109 words, 5381 OOVs
+0 zeroprobs, logprob= -1.93236e+06 ppl= 976.298 ppl1= 3803.99
+
+Bigram Model:
+file hip_hop_rap.test.txt: 106713 sentences, 772655 words, 5381 OOVs
+0 zeroprobs, logprob= -1.96276e+06 ppl= 176.099 ppl1= 361.493
+
+Bigram Model (Stop words removed):
+file hip_hop_rap.test.nostop.txt: 106635 sentences, 545109 words, 5381 OOVs
+0 zeroprobs, logprob= -1.62742e+06 ppl= 329.465 ppl1= 1035.75
+
+Trigram Model:
+file hip_hop_rap.test.txt: 106713 sentences, 772655 words, 5381 OOVs
+0 zeroprobs, logprob= -1.81355e+06 ppl= 118.857 ppl1= 231.005
+
+Trigram Model (Stop words removed):
+file hip_hop_rap.test.nostop.txt: 106635 sentences, 545109 words, 5381 OOVs
+0 zeroprobs, logprob= -1.53985e+06 ppl= 241.171 ppl1= 712.863
+
+
+Computing n-grams models for rock_metal_country corpus...
+
+Unigram Model:
+file rock_metal_country.test.txt: 90025 sentences, 556421 words, 3244 OOVs
+0 zeroprobs, logprob= -1.70581e+06 ppl= 448.802 ppl1= 1212.42
+
+Unigram Model (Stop words removed):
+file rock_metal_country.test.nostop.txt: 89936 sentences, 385137 words, 3244 OOVs
+0 zeroprobs, logprob= -1.33288e+06 ppl= 668.224 ppl1= 3091.67
+
+Bigram Model:
+file rock_metal_country.test.txt: 90025 sentences, 556421 words, 3244 OOVs
+0 zeroprobs, logprob= -1.33079e+06 ppl= 117.222 ppl1= 254.521
+
+Bigram Model (Stop words removed):
+file rock_metal_country.test.nostop.txt: 89936 sentences, 385137 words, 3244 OOVs
+0 zeroprobs, logprob= -1.0914e+06 ppl= 205.645 ppl1= 720.872
+
+Trigram Model:
+file rock_metal_country.test.txt: 90025 sentences, 556421 words, 3244 OOVs
+0 zeroprobs, logprob= -1.20131e+06 ppl= 73.7401 ppl1= 148.476
+
+Trigram Model (Stop words removed):
+file rock_metal_country.test.nostop.txt: 89936 sentences, 385137 words, 3244 OOVs
+0 zeroprobs, logprob= -1.01359e+06 ppl= 140.675 ppl1= 450.943
+
+
+Computing n-grams models for shakespeare_sonnets corpus...
+
+Unigram Model:
+file shakespeare_sonnets.test.txt: 614 sentences, 4921 words, 406 OOVs
+0 zeroprobs, logprob= -13821.1 ppl= 495.099 ppl1= 1151.19
+
+Unigram Model (Stop words removed):
+file shakespeare_sonnets.test.nostop.txt: 614 sentences, 3797 words, 406 OOVs
+0 zeroprobs, logprob= -11305.7 ppl= 665.116 ppl1= 2157.9
+
+Bigram Model:
+file shakespeare_sonnets.test.txt: 614 sentences, 4921 words, 406 OOVs
+0 zeroprobs, logprob= -13012.6 ppl= 344.396 ppl1= 762.21
+
+Bigram Model (Stop words removed):
+file shakespeare_sonnets.test.nostop.txt: 614 sentences, 3797 words, 406 OOVs
+0 zeroprobs, logprob= -10881 ppl= 521.027 ppl1= 1617.32
+
+Trigram Model:
+file shakespeare_sonnets.test.txt: 614 sentences, 4921 words, 406 OOVs
+0 zeroprobs, logprob= -13007.8 ppl= 343.659 ppl1= 760.358
+
+Trigram Model (Stop words removed):
+file shakespeare_sonnets.test.nostop.txt: 614 sentences, 3797 words, 406 OOVs
+0 zeroprobs, logprob= -10875.5 ppl= 519.377 ppl1= 1611.27
+
+
+Computing n-grams models for shakespeare corpus...
+
+Unigram Model:
+file shakespeare.test.txt: 11290 sentences, 88784 words, 1181 OOVs
+0 zeroprobs, logprob= -276404 ppl= 623.703 ppl1= 1429.51
+
+Unigram Model (Stop words removed):
+file shakespeare.test.nostop.txt: 11288 sentences, 65208 words, 1181 OOVs
+0 zeroprobs, logprob= -223969 ppl= 941.372 ppl1= 3148.02
+
+Bigram Model:
+file shakespeare.test.txt: 11290 sentences, 88784 words, 1181 OOVs
+0 zeroprobs, logprob= -243237 ppl= 288.138 ppl1= 597.842
+
+Bigram Model (Stop words removed):
+file shakespeare.test.nostop.txt: 11288 sentences, 65208 words, 1181 OOVs
+0 zeroprobs, logprob= -206594 ppl= 553.428 ppl1= 1685.25
+
+Trigram Model:
+file shakespeare.test.txt: 11290 sentences, 88784 words, 1181 OOVs
+0 zeroprobs, logprob= -239681 ppl= 265.242 ppl1= 544.495
+
+Trigram Model (Stop words removed):
+file shakespeare.test.nostop.txt: 11288 sentences, 65208 words, 1181 OOVs
+0 zeroprobs, logprob= -205724 ppl= 538.909 ppl1= 1633.37
+
+
+Computing n-grams models for le_fabliaux corpus...
+
+Unigram Model:
+file le_fabliaux.test.txt: 45 sentences, 992 words, 133 OOVs
+0 zeroprobs, logprob= -2288.43 ppl= 339.977 ppl1= 461.385
+
+Unigram Model (Stop words removed):
+file le_fabliaux.test.nostop.txt: 45 sentences, 741 words, 133 OOVs
+0 zeroprobs, logprob= -1770.57 ppl= 514.564 ppl1= 816.81
+
+Bigram Model:
+file le_fabliaux.test.txt: 45 sentences, 992 words, 133 OOVs
+0 zeroprobs, logprob= -2152.2 ppl= 240.301 ppl1= 320.24
+
+Bigram Model (Stop words removed):
+file le_fabliaux.test.nostop.txt: 45 sentences, 741 words, 133 OOVs
+0 zeroprobs, logprob= -1727.6 ppl= 442.211 ppl1= 694.131
+
+Trigram Model:
+file le_fabliaux.test.txt: 45 sentences, 992 words, 133 OOVs
+0 zeroprobs, logprob= -2153.45 ppl= 241.068 ppl1= 321.316
+
+Trigram Model (Stop words removed):
+file le_fabliaux.test.nostop.txt: 45 sentences, 741 words, 133 OOVs
+0 zeroprobs, logprob= -1726.94 ppl= 441.189 ppl1= 692.407
