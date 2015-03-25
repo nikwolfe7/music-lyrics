@@ -9,11 +9,11 @@ Created on Mar 23, 2015
 # ===================================== #
 # STUFF YOU CAN CHANGE
 # ===================================== #
-corpus_name = "brown"
+corpus_name = "shakespeare"
 directory = corpus_name
-output = "brown_corpus"
+output = "lang_model"
 remove_stops = True
-filetype = ""
+filetype = ".txt"
 # ===================================== #
 # STUFF YOU LEAVE ALONE
 # ===================================== #

@@ -1,3 +1,4 @@
+from collections import Counter
 '''
 Created on Mar 20, 2015
 
@@ -6,6 +7,8 @@ Created on Mar 20, 2015
 import os
 
 def main():
+    original_size = 1000
+    vocab_size = original_size
     GRE = set([l.strip() for l in open("GRE.txt").readlines()])
     for root, dirs, files in os.walk(".", topdown=True):
         for f in files:
@@ -26,12 +29,29 @@ def main():
                 sorted_words = sorted(sorted_words, key=lambda x: x[1], reverse=True)
                 avg_usage = float(total_usage) / len(overlap)         
                 print(sorted_words)
-                print(f + " contains " + str(len(overlap)) + " GRE words... " + str(total_usage) + " mentions, avg: " + str(avg_usage) + "\n")
+                print(f + " contains " + str(len(overlap)) + " GRE words... " + str(total_usage) + " mentions, avg: " + str(avg_usage))
                 
+                # pseudocount smooting for GRE words...
+                while vocab_size < 250000:
+                    words = [(l.split(",")[0], int(l.split(",")[-1])) for l in open(f).readlines()]
+                    #words += [(word,1) for word in list(GRE)]
+                    words = words[:vocab_size]
+                    unigram = {}
+                    for word in words: unigram[word[0]] = word[1]
+                    total = sum(unigram.values())
+                    for word in unigram: unigram[word] = unigram[word] / total
+                    
+                    gre_score = 0.0
+                    for word in GRE: 
+                        try:
+                            gre_score += unigram[word]
+                        except KeyError as e: continue
+                            
+                    print("Total probability of GRE vocabulary in " + f + ": " + str(gre_score) + " with vocab size: " + str(vocab_size))
+                    vocab_size += 25000
                 
+                print("\n")
+                vocab_size = original_size
                 
-            
-            
-
 if __name__ == '__main__':
     main()
