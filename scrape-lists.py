@@ -12,20 +12,22 @@ from debug import debug
 #w1 = "http://www.ranker.com/list/top-ten-greatest-90_s-rock-bands/styx88?format=GRID"
 #w1 = "http://www.ranker.com/list/grunge-music-bands-and-musicians/reference"
 #w1 = "http://digitaldreamdoor.com/pages/best_songs90s.html"
-w1 = "http://en.wikipedia.org/wiki/List_of_hard_rock_musicians_(A%E2%80%93M)"
-w2 = "http://en.wikipedia.org/wiki/List_of_hard_rock_musicians_(N%E2%80%93Z)"
-years = ['1990','1991','1992','1993','1994','1995','1996','1997','1998','1999']
-startwords = ['formed','begun','started','began','founded','first']
+w1 = "http://en.wikipedia.org/wiki/List_of_Baroque_composers"
+w2 = "http://en.wikipedia.org/wiki/List_of_Classical-era_composers"
+#years = ['1990','1991','1992','1993','1994','1995','1996','1997','1998','1999']
+#startwords = ['formed','begun','started','began','founded','first']
 websites = [w1,w2]
 
 #base_url = "http://" + website.replace("http://","").split(os.sep)[0]
 rock = {}
 hip_hop = {}
+classical = {}
 rock_file = 'rock-metal-country.txt'
 hip_hop_file = 'hip-hop-rap.txt'
+classical_file = 'classical.txt'
 
-current_list = rock
-current_file = rock_file
+current_list = classical
+current_file = classical_file
 
 def rename_file(name):
 	al.rename_file(name, os.getcwd())
@@ -66,6 +68,8 @@ def go_get_stuff(soup):
 			s = s.split('</a>')[0].split('">')[-1].replace('&amp;','&').strip()
 			if len(s): 
 				print("Artist: "+s)
+				current_list[s] = True
+				'''
 				try:
 					result = wikipedia.summary(s)
 					if check_summary(result):
@@ -86,6 +90,7 @@ def go_get_stuff(soup):
 								current_list[s] = True
 						except Exception:
 							print('woops')
+				'''
 
 	debug(current_list)
 	print_shit()

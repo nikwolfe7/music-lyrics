@@ -134,21 +134,23 @@ if __name__ == "__main__":
 	make_dir(check_folder)
 	finished = False
 	while not finished:
-		try:
-			for artist in artists: 
+		for artist in artists:
+			try:
 				artist_song_urls = get_artist_urls(artist)
 				artist_song_urls = update_url_list(artist_song_urls)
 				for url in artist_song_urls:
 					download_midi(artist, url)
-				
-			# only if we complete the artist loop...
-			finished = True
-		except Exception as e:
-			print(e)
-			print("These fucking assholes are delaying you again...")
-			print("Last time we waited a while... "+str(retry_time)+ "s... ")
-			if retry_time > 30: 
-				retry_time *= 1
-				seconds_to_wait += 0
-			else: retry_time += 0
-			delay(retry_time)
+					
+			except Exception as e:
+				print(e)
+				print("These fucking assholes are delaying you again...")
+				print("Last time we waited a while... "+str(retry_time)+ "s... ")
+				if retry_time > 30: 
+					retry_time *= 1
+					seconds_to_wait += 0
+				else: retry_time += 0
+				delay(retry_time)
+				continue
+			
+		# only if we complete the artist loop...
+		finished = True

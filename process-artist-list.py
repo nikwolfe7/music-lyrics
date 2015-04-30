@@ -5,7 +5,7 @@ from collections import Counter
 
 #txtfile = 'hip-hop-rap.txt'
 #checkfile = 'rock-metal-country.txt'
-txtfile = 'hip-hop-rap.txt'
+txtfile = 'classical.txt'
 
 def clean_list(clist):
 	for i in range(len(clist)):
